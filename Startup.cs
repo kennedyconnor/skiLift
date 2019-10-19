@@ -13,9 +13,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using MySql.Data.MySqlClient;
-using skiLift.Repositories;
+using SkiLift.Repositories;
 
-namespace skiLift
+namespace SkiLift
 {
   public class Startup
   {
