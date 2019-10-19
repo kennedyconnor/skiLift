@@ -5,6 +5,30 @@ using System.Security.Claims;
 
 namespace skiLift.Models
 {
+  public class UserLogin // HELPER MODEL
+  {
+    [Required]
+    [EmailAddress]
+    public string Email { get; set; }
+
+    [Required]
+    [MinLength(6)]
+    public string Password { get; set; }
+  }
+  public class UserRegistration // HELPER MODEL
+  {
+
+    [Required]
+    public string Username { get; set; }
+
+    [Required]
+    [EmailAddress]
+    public string Email { get; set; }
+
+    [Required]
+    [MinLength(6)]
+    public string Password { get; set; }
+  }
   public class User
   {
     public string Id { get; set; }

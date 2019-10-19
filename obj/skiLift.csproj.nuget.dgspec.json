@@ -39,6 +39,10 @@
       "frameworks": {
         "netcoreapp2.2": {
           "dependencies": {
+            "Bcrypt": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
             "Microsoft.AspNetCore.App": {
               "suppressParent": "All",
               "target": "Package",
@@ -55,6 +59,18 @@
               "target": "Package",
               "version": "[2.2.0, )",
               "autoReferenced": true
+            },
+            "MySqlConnector": {
+              "target": "Package",
+              "version": "[0.60.0, )"
+            },
+            "bcrypt.net-core": {
+              "target": "Package",
+              "version": "(, )"
+            },
+            "dapper": {
+              "target": "Package",
+              "version": "[2.0.30, )"
             }
           },
           "imports": [
