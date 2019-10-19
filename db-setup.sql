@@ -1,13 +1,13 @@
---  USE keeprdatabase;
+--  USE skilift;
 
--- -- CREATE TABLE users (
--- --     id VARCHAR(255) NOT NULL,
--- --     username VARCHAR(20) NOT NULL,
--- --     email VARCHAR(255) NOT NULL,
--- --     hash VARCHAR(255) NOT NULL,
--- --     PRIMARY KEY (id),
--- --     UNIQUE KEY email (email)
--- -- );
+-- CREATE TABLE users (
+--     id VARCHAR(255) NOT NULL,
+--     username VARCHAR(20) NOT NULL,
+--     email VARCHAR(255) NOT NULL,
+--     hash VARCHAR(255) NOT NULL,
+--     PRIMARY KEY (id),
+--     UNIQUE KEY email (email)
+-- );
 
 -- -- CREATE TABLE vaults (
 -- --     id int NOT NULL AUTO_INCREMENT,
