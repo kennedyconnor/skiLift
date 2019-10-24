@@ -32,6 +32,7 @@ namespace SkiLift.Models
   public class User
   {
     public string Id { get; set; }
+    public bool Active { get; set; } = true;
     public string Username { get; set; }
     [Required]
     [EmailAddress]
