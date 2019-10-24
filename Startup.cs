@@ -65,9 +65,9 @@ namespace SkiLift
       services.AddMvc();
       services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-      //Register Repos
-
+      //inject dependencies
       services.AddTransient<IDbConnection>(x => CreateDBContext());
+      //register repos
       services.AddTransient<UserRepository>();
     }
 
@@ -77,13 +77,16 @@ namespace SkiLift
       if (env.IsDevelopment())
       {
         app.UseDeveloperExceptionPage();
+        app.UseCors("CorsDevPolicy");
       }
       else
       {
         // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
         app.UseHsts();
       }
-
+      app.UseAuthentication();
+      app.UseDefaultFiles();
+      app.UseStaticFiles();
       app.UseHttpsRedirection();
       app.UseMvc();
     }
