@@ -39,10 +39,6 @@
       "frameworks": {
         "netcoreapp2.2": {
           "dependencies": {
-            "Bcrypt": {
-              "target": "Package",
-              "version": "[1.0.0, )"
-            },
             "Microsoft.AspNetCore.App": {
               "suppressParent": "All",
               "target": "Package",
@@ -66,7 +62,7 @@
             },
             "bcrypt.net-core": {
               "target": "Package",
-              "version": "(, )"
+              "version": "[1.6.0, )"
             },
             "dapper": {
               "target": "Package",
