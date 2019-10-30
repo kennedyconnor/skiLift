@@ -9,36 +9,47 @@
 --     UNIQUE KEY email (email)
 -- );
 
--- -- CREATE TABLE vaults (
--- --     id int NOT NULL AUTO_INCREMENT,
--- --     name VARCHAR(20) NOT NULL,
--- --     description VARCHAR(255) NOT NULL,
--- --     userId VARCHAR(255),
--- --     INDEX userId (userId),
--- --     FOREIGN KEY (userId)
--- --         REFERENCES users(id)
--- --         ON DELETE CASCADE,  
--- --     PRIMARY KEY (id)
--- -- );
+-- CREATE TABLE passengers (
+--     id int NOT NULL AUTO_INCREMENT,
+--     name VARCHAR(20) NOT NULL,
+--     destination VARCHAR(255) NOT NULL,
+--     userId VARCHAR(255),
+--     INDEX userId (userId),
+--     FOREIGN KEY (userId)
+--         REFERENCES users(id)
+--         ON DELETE CASCADE,  
+--     PRIMARY KEY (id)
+-- );
+-- CREATE TABLE rides (
+--     id int NOT NULL AUTO_INCREMENT,
+--     name VARCHAR(20) NOT NULL,
+--     destination VARCHAR(255) NOT NULL,
+--     maxpassengers int NOT NULL,
+--     userId VARCHAR(255),
+--     INDEX userId (userId),
+--     FOREIGN KEY (userId)
+--         REFERENCES users(id)
+--         ON DELETE CASCADE,  
+--     PRIMARY KEY (id)
+-- );
 
+-- CREATE TABLE ride_passengers (
+--     id int NOT NULL AUTO_INCREMENT,
+--     rideId int NOT NULL,
+--     passengerId int NOT NULL,
+   
+--     PRIMARY KEY (id),
+--     INDEX (rideId, passengerId),
 
+--     FOREIGN KEY (rideId)
+--         REFERENCES rides(id)
+--         ON DELETE CASCADE,
 
--- -- CREATE TABLE keeps (
--- --     id int NOT NULL AUTO_INCREMENT,
--- --     name VARCHAR(20) NOT NULL,
--- --     description VARCHAR(255) NOT NULL,
--- --     userId VARCHAR(255),
--- --     img VARCHAR(255),
--- --     isPrivate TINYINT,
--- --     views INT DEFAULT 0,
--- --     shares INT DEFAULT 0,
--- --     keeps INT DEFAULT 0,
--- --     INDEX userId (userId),
--- --     FOREIGN KEY (userId)
--- --         REFERENCES users(id)
--- --         ON DELETE CASCADE,  
--- --     PRIMARY KEY (id)
--- -- );
+--     FOREIGN KEY (passengerId)
+--         REFERENCES passengers(id)
+--         ON DELETE CASCADE
+-- )
+
 
 -- -- CREATE TABLE vaultkeeps (
 -- --     id int NOT NULL AUTO_INCREMENT,
