@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace skiLift.Controllers
+namespace SkiLift.Controllers
 {
   [Route("account")]
   [ApiController]
