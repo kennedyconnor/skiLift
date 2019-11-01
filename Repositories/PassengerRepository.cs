@@ -38,8 +38,8 @@ namespace SkiLift.Repositories
     public Passenger Create(Passenger data)
     {
       string query = @"
-            INSERT INTO passengers (name, description, userId)
-            VALUES (@Name, @Description, @UserId);
+            INSERT INTO passengers (name, destination, userId)
+            VALUES (@Name, @Destination, @UserId);
             SELECT LAST_INSERT_ID();
             ";
       int id = _db.ExecuteScalar<int>(query, data);
@@ -53,7 +53,7 @@ namespace SkiLift.Repositories
             UPDATE passengers 
             SET
             name = @Name,
-            description = @Description,
+            destination = @Destination,
             WHERE id = @Id ;
             SELECT * FROM passengers WHERE id = @Id ;
            ";
