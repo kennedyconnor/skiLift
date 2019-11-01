@@ -38,8 +38,8 @@ namespace SkiLift.Repositories
     public Ride_Passenger Create(Ride_Passenger data)
     {
       string query = @"
-            INSERT INTO ride_passengers (name, description, userId)
-            VALUES (@Name, @Description, @UserId);
+            INSERT INTO ride_passengers (rideId, passengerId)
+            VALUES (@Description, @UserId);
             SELECT LAST_INSERT_ID();
             ";
       int id = _db.ExecuteScalar<int>(query, data);
@@ -52,8 +52,8 @@ namespace SkiLift.Repositories
       string query = @"
             UPDATE ride_passengers 
             SET
-            name = @Name,
-            description = @Description,
+            passengerId = @PassengerId,
+            rideId = @RideId,
             WHERE id = @Id ;
             SELECT * FROM ride_passengers WHERE id = @Id ;
            ";
@@ -63,7 +63,7 @@ namespace SkiLift.Repositories
 
     public string Delete(int id, string userId)
     {
-      string query = "DELETE FROM ride_passengers WHERE id = @Id AND userId = @UserId;";
+      string query = "DELETE FROM ride_passengers WHERE id = @Id ;";
       int changedRows = _db.Execute(query, new { id, userId });
       if (changedRows < 1) throw new Exception("Invalid Id");
       return "Successfully Deleted Vault";
