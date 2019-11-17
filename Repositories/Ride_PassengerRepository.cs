@@ -15,7 +15,7 @@ namespace SkiLift.Repositories
       _db = db;
     }
 
-    public IEnumerable<Ride_Passenger> GetAll(string id)
+    public IEnumerable<Ride_Passenger> GetAllByUser(string id)
     {
       return _db.Query<Ride_Passenger>("SELECT * FROM ride_passengers WHERE userId = @id", new { id });
     }
@@ -39,7 +39,7 @@ namespace SkiLift.Repositories
     {
       string query = @"
             INSERT INTO ride_passengers (rideId, passengerId)
-            VALUES (@Description, @UserId);
+            VALUES (@RideId, @PassengerId);
             SELECT LAST_INSERT_ID();
             ";
       int id = _db.ExecuteScalar<int>(query, data);

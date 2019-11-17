@@ -25,7 +25,7 @@ namespace SkiLift.Controllers
       try
       {
         var id = HttpContext.User.FindFirstValue("Id");
-        return Ok(_repo.GetAll(id));
+        return Ok(_repo.GetAllByUser(id));
       }
       catch (Exception e)
       {
@@ -71,7 +71,6 @@ namespace SkiLift.Controllers
     {
       try
       {
-        data.UserId = HttpContext.User.FindFirstValue("Id");
         return Ok(_repo.Create(data));
       }
       catch (Exception e)
