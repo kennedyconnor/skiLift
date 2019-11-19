@@ -39,7 +39,7 @@ namespace SkiLift.Repositories
     {
       string query = @"
             INSERT INTO rides (name, destination, userId, maxpassengers)
-            VALUES (@Name, @Destination, @UserId, @Max);
+            VALUES (@Name, @Destination, @UserId, @MaxPassengers);
             SELECT LAST_INSERT_ID();
             ";
       int id = _db.ExecuteScalar<int>(query, data);
