@@ -1,6 +1,7 @@
 <template>
   <div class="home ">
-
+    <h3>SkiLift</h3>
+    <h6>Easy ridesharing to your local mountain!</h6>
   </div>
 </template>
 
