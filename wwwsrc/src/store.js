@@ -40,6 +40,9 @@ export default new Vuex.Store({
     setPassengers(state, passengers) {
       state.passengers = passengers;
     },
+    resetState(state) {
+      state.user = {}
+    }
   },
 
   actions: {
@@ -71,6 +74,19 @@ export default new Vuex.Store({
       } catch (e) {
         console.warn(e.message)
       }
+    },
+    //#endregion
+
+    //#region RIDES
+    async getAllRides({ commit, dispatch }) {
+      try {
+        let res = await api.get("rides");
+        commit("setRides", res.data)
+      } catch (error) {
+        console.warn(error.message)
+      }
     }
+
+
   }
 })
