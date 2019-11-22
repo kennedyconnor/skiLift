@@ -17,13 +17,29 @@ let api = Axios.create({
 export default new Vuex.Store({
   state: {
     user: {},
+    activePassenger: {},
+    activeRide: {},
+    rides: [],
+    passengers: []
 
   },
 
   mutations: {
     setUser(state, user) {
-
-    }
+      state.user = user;
+    },
+    setActivePassenger(state, activePassenger) {
+      state.activePassenger = activePassenger;
+    },
+    setActiveRide(state, activeRide) {
+      state.activeRide = activeRide;
+    },
+    setRides(state, rides) {
+      state.rides = rides;
+    },
+    setPassengers(state, passengers) {
+      state.passengers = passengers;
+    },
   },
 
   actions: {
