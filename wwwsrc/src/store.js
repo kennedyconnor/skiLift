@@ -85,8 +85,72 @@ export default new Vuex.Store({
       } catch (error) {
         console.warn(error.message)
       }
-    }
+    },
 
+    async createRide({ commit, dispatch }, payload) {
+      try {
+        await api.post("rides", payload)
+        dispatch("getAllRides")
+      } catch (error) {
+        console.warn(error.message)
+      }
+    },
+    async editRide({ commit, dispatch }, payload) {
+      try {
+        await api.put("rides/" + payload.id, payload)
+        dispatch("getAllRides")
+      } catch (error) {
+        console.warn(error.message)
+      }
+    },
+    async deleteRide({ commit, dispatch }, id) {
+      try {
+        await api.delete("rides/" + id)
+        dispatch("getAllRides")
+      } catch (error) {
+        console.warn(error.message)
+      }
+    },
+    //#endregion
 
+    //#region PASSENGERS
+    async getAllPassengers({ commit, dispatch }) {
+      try {
+        let res = await api.get("passengers");
+        commit("setPassengers", res.data)
+      } catch (error) {
+        console.warn(error.message)
+      }
+    },
+
+    async createPassenger({ commit, dispatch }, payload) {
+      try {
+        await api.post("passengers", payload)
+        dispatch("getAllPassengers")
+      } catch (error) {
+        console.warn(error.message)
+      }
+    },
+    async editPassenger({ commit, dispatch }, payload) {
+      try {
+        await api.put("passengers/" + payload.id, payload)
+        dispatch("getAllPassengers")
+      } catch (error) {
+        console.warn(error.message)
+      }
+    },
+    async deletePassenger({ commit, dispatch }, id) {
+      try {
+        await api.delete("passengers/" + id)
+        dispatch("getAllPassengers")
+      } catch (error) {
+        console.warn(error.message)
+      }
+    },
+    //#endregion
+
+    //#region RIDE-PASSENGERS
+
+    //#endregion
   }
 })
