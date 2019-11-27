@@ -17,7 +17,7 @@ namespace SkiLift.Repositories
 
     public IEnumerable<Ride> GetAll(string id)
     {
-      return _db.Query<Ride>("SELECT * FROM rides WHERE userId = @id", new { id });
+      return _db.Query<Ride>("SELECT * FROM rides");
     }
 
     public Ride GetById(int id)

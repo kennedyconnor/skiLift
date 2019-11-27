@@ -8,7 +8,7 @@ using System.Security.Claims;
 
 namespace SkiLift.Controllers
 {
-  [Route("api/[controller]")]
+  [Route("api/rides")]
   [ApiController]
 
   public class RidesController : ControllerBase

@@ -69,6 +69,10 @@ namespace SkiLift
       services.AddTransient<IDbConnection>(x => CreateDBContext());
       //register repos
       services.AddTransient<UserRepository>();
+      services.AddTransient<RideRepository>();
+      services.AddTransient<PassengerRepository>();
+      services.AddTransient<Ride_PassengerRepository>();
+
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

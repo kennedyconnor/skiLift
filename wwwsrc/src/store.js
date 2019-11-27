@@ -150,7 +150,39 @@ export default new Vuex.Store({
     //#endregion
 
     //#region RIDE-PASSENGERS
+    async getAllRide_Passengers({ commit, dispatch }) {
+      try {
+        let res = await api.get("ride_passengers");
+        commit("setRide_Passengers", res.data)
+      } catch (error) {
+        console.warn(error.message)
+      }
+    },
 
-    //#endregion
+    async createRide_Passenger({ commit, dispatch }, payload) {
+      try {
+        await api.post("ride_passengers", payload)
+        dispatch("getAllRide_Passengers")
+      } catch (error) {
+        console.warn(error.message)
+      }
+    },
+    async editRide_Passenger({ commit, dispatch }, payload) {
+      try {
+        await api.put("ride_passengers/" + payload.id, payload)
+        dispatch("getAllRide_Passengers")
+      } catch (error) {
+        console.warn(error.message)
+      }
+    },
+    async deleteRide_Passenger({ commit, dispatch }, id) {
+      try {
+        await api.delete("ride_passengers/" + id)
+        dispatch("getAllRide_Passengers")
+      } catch (error) {
+        console.warn(error.message)
+        //#endregion
+      }
+    }
   }
 })
