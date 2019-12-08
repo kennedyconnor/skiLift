@@ -18,7 +18,7 @@ namespace SkiLift.Controllers
     {
       _repo = repo;
     }
-    //GET api/vaults
+    //GET api/passengers
     [HttpGet]
     public ActionResult<IEnumerable<Passenger>> Get()
     {
@@ -33,7 +33,7 @@ namespace SkiLift.Controllers
       }
     }
 
-    // GET api/vaults/5
+    // GET api/passengers/5
     [HttpGet("{id}")]
     public ActionResult<Passenger> Get(int id)
     {
@@ -47,7 +47,7 @@ namespace SkiLift.Controllers
       }
     }
 
-    //GET api/vaults/user
+    //GET api/passengers/user
     [Authorize]
     [HttpGet("user")]
 
@@ -64,7 +64,7 @@ namespace SkiLift.Controllers
       }
     }
 
-    //POST api/vaults
+    //POST api/passengers
     [Authorize]
     [HttpPost]
     public ActionResult<Passenger> Post([FromBody] Passenger data)
@@ -80,7 +80,7 @@ namespace SkiLift.Controllers
       }
     }
 
-    //PUT api/vaults/5
+    //PUT api/passengers/5
     [HttpPut("{id}")]
     public ActionResult<Passenger> Put(int id, [FromBody] Passenger data)
     {

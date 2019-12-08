@@ -18,7 +18,7 @@ namespace SkiLift.Controllers
     {
       _repo = repo;
     }
-    //GET api/vaults
+    //GET api/ride_passengers
     [HttpGet]
     public ActionResult<IEnumerable<Ride_Passenger>> Get()
     {
@@ -33,7 +33,7 @@ namespace SkiLift.Controllers
       }
     }
 
-    // GET api/vaults/5
+    // GET api/ride_passengers/5
     [HttpGet("{id}")]
     public ActionResult<Ride_Passenger> Get(int id)
     {
@@ -47,24 +47,9 @@ namespace SkiLift.Controllers
       }
     }
 
-    //GET api/vaults/user
-    [Authorize]
-    [HttpGet("user")]
 
-    public ActionResult<IEnumerable<Ride_Passenger>> GetByUser()
-    {
-      try
-      {
-        var id = HttpContext.User.FindFirstValue("Id");
-        return Ok(_repo.GetByUser(id));
-      }
-      catch (Exception e)
-      {
-        return BadRequest(e);
-      }
-    }
 
-    //POST api/vaults
+    //POST api/ride_passengers
     [Authorize]
     [HttpPost]
     public ActionResult<Ride_Passenger> Post([FromBody] Ride_Passenger data)
@@ -79,7 +64,7 @@ namespace SkiLift.Controllers
       }
     }
 
-    //PUT api/vaults/5
+    //PUT api/ride_passengers/5
     [HttpPut("{id}")]
     public ActionResult<Ride_Passenger> Put(int id, [FromBody] Ride_Passenger data)
     {
