@@ -2,10 +2,13 @@
   <div class="home ">
     <h3>SkiLift</h3>
     <h6>Easy ridesharing to your local mountain!</h6>
+    <GoogleMap />
   </div>
 </template>
 
+
 <script>
+  import GoogleMap from "@/components/GoogleMap.vue"
   export default {
     name: "home",
     props: [],
@@ -14,7 +17,7 @@
     },
     computed: {},
     methods: {},
-    components: {}
+    components: { GoogleMap }
   }
 </script>
 
