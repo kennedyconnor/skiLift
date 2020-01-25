@@ -12,7 +12,8 @@
       props: [],
       data() {
          return {
-            gMap: "",
+            Connor: { lat: 43.6150142, lng: -116.2367955 },
+            map: {}
          }
       },
       computed: {},
@@ -23,6 +24,17 @@
             center: { lat: 43.6150, lng: -116.2023 },
             scrollwheel: false,
             zoom: 12
+         })
+
+         let marker = new google.maps.Marker({
+            position: this.Connor,
+            map: this.map,
+            title: "Connor Kennedy",
+            icon: {
+               url: "ski.png", // url
+               scaledSize: new google.maps.Size(30, 30),
+            }
+
          })
       }
    }
