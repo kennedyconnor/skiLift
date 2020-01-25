@@ -19,20 +19,18 @@
       methods: {},
       components: {},
       mounted() {
-         let latling = new google.maps.LatLng(43.6150, 116.2023)
          this.map = new google.maps.Map(document.getElementById('googleMap'), {
-            center: { lat: 61.180059, lng: -149.822075 },
+            center: { lat: 43.6150, lng: -116.2023 },
             scrollwheel: false,
-            zoom: 4
+            zoom: 12
          })
-         console.log("map: ", this.gMap)
       }
    }
 </script>
 
 <style>
    #googleMap {
-      height: 300px;
+      height: 500px;
       width: 100%;
    }
 </style>
