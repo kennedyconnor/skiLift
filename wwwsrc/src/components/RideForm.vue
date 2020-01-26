@@ -1,6 +1,6 @@
 <template>
-  <div class=" ">
-
+  <div class="rideForm col-4 offset-2">
+    <h3>Are you looking to get a ride?</h3>
   </div>
 </template>
 
