@@ -21,10 +21,22 @@
     name: "passengerForm",
     props: [],
     data() {
-      return {}
+      return {
+        passenger: {
+          name: "",
+          destination: "",
+        }
+      }
     },
     computed: {},
-    methods: {},
+    methods: {
+      createPassenger() {
+        let newPassenger = this.passenger
+        newPassenger.name = this.store.state.user.name
+        newPassenger.destination = this.passenger.destination
+        this.store.dispatch("createPassenger", newPassenger)
+      }
+    },
     components: {}
   }
 </script>
