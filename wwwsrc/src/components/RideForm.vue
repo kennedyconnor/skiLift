@@ -5,7 +5,7 @@
     <form>
       <div class="form-group">
         <label>Destination (Idaho)</label>
-        <select class="form-control" id="RideFormDestinationSelect">
+        <select class="form-control" id="RideFormDestinationSelect" v-model="destination">
           <option>Bogus Basin</option>
           <option>Tamarack</option>
           <option>Brundage</option>
@@ -22,19 +22,18 @@
     props: [],
     data() {
       return {
-        ride: {
-          destination: "",
-          capacity: 0,
-        }
+        destinaton: "",
+        capacity: 0
       }
     },
     computed: {},
     methods: {
       createRide() {
-        let newRide = this.ride
-        newRide.name = this.store.state.user.name
-        newRide.destination = this.ride.destination
-        newRide.capaity = this.ride.capacity
+        let newRide = {
+          name = this.store.state.user.name,
+          destination = this.destination,
+          capacity = this.capacity
+        }
         this.store.dispatch("createRide", newRide)
       }
     },
