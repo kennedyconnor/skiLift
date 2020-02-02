@@ -21,10 +21,23 @@
     name: "",
     props: [],
     data() {
-      return {}
+      return {
+        ride: {
+          destination: "",
+          capacity: 0,
+        }
+      }
     },
     computed: {},
-    methods: {},
+    methods: {
+      createRide() {
+        let newRide = this.ride
+        newRide.name = this.store.state.user.name
+        newRide.destination = this.ride.destination
+        newRide.capaity = this.ride.capacity
+        this.store.dispatch("createRide", newRide)
+      }
+    },
     components: {}
   }
 </script>
