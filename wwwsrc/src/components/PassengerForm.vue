@@ -5,7 +5,7 @@
     <form>
       <div class="form-group">
         <label>Destination (Idaho)</label>
-        <select class="form-control" id="PassengerFormDestinationSelect">
+        <select class="form-control" id="PassengerFormDestinationSelect" v-model="destination">
           <option>Bogus Basin</option>
           <option>Tamarack</option>
           <option>Brundage</option>
@@ -22,17 +22,16 @@
     props: [],
     data() {
       return {
-        passenger: {
-          destination: "",
-        }
+        destination: ""
       }
     },
     computed: {},
     methods: {
       createPassenger() {
-        let newPassenger = this.passenger
-        newPassenger.name = this.store.state.user.name
-        newPassenger.destination = this.passenger.destination
+        let newPassenger = {
+          name = this.store.state.user.name,
+          destination = this.passenger.destination
+        }
         this.store.dispatch("createPassenger", newPassenger)
       }
     },
