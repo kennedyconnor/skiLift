@@ -29,8 +29,8 @@
     methods: {
       createPassenger() {
         let newPassenger = {
-          name = this.store.state.user.name,
-          destination = this.passenger.destination
+          name: this.store.state.user.name,
+          destination: this.passenger.destination
         }
         this.store.dispatch("createPassenger", newPassenger)
       }

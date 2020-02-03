@@ -30,9 +30,9 @@
     methods: {
       createRide() {
         let newRide = {
-          name = this.store.state.user.name,
-          destination = this.destination,
-          capacity = this.capacity
+          name: this.store.state.user.name,
+          destination: this.destination,
+          capacity: this.capacity
         }
         this.store.dispatch("createRide", newRide)
       }
