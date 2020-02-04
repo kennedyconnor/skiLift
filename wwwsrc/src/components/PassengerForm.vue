@@ -12,6 +12,7 @@
           <option>Sun Valley</option>
         </select>
       </div>
+      <button class="btn btn-primary" @click="createPassenger()">Go</button>
     </form>
   </div>
 </template>
@@ -29,10 +30,11 @@
     methods: {
       createPassenger() {
         let newPassenger = {
-          name: this.store.state.user.name,
-          destination: this.passenger.destination
+          name: "Connor"//this.store.state.user.name
+          ,
+          destination: this.destination
         }
-        this.store.dispatch("createPassenger", newPassenger)
+        this.$store.dispatch("createPassenger", newPassenger)
       }
     },
     components: {}

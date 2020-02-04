@@ -22,7 +22,7 @@
     props: [],
     data() {
       return {
-        destinaton: "",
+        destination: "",
         capacity: 0
       }
     },
