@@ -4,6 +4,7 @@
       <div class="col">
         <h3>SkiLift</h3>
         <h6>Easy ridesharing to your local mountain!</h6>
+        <Login />
         <GoogleMap />
       </div>
     </div>
@@ -24,6 +25,7 @@
   import GoogleMap from "@/components/GoogleMap.vue"
   import RideForm from "@/components/RideForm.vue"
   import PassengerForm from "@/components/PassengerForm.vue"
+  import Login from "@/components/Login.vue"
   export default {
     name: "home",
     props: [],
@@ -32,7 +34,7 @@
     },
     computed: {},
     methods: {},
-    components: { GoogleMap, RideForm, PassengerForm }
+    components: { GoogleMap, RideForm, PassengerForm, Login }
   }
 </script>
 

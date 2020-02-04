@@ -2,7 +2,7 @@
   <div class="login">
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-      Launch demo modal
+      Login
     </button>
 
     <!-- Modal -->
@@ -34,10 +34,17 @@
     name: "login",
     props: [],
     data() {
-      return {}
+      return {
+        username: "",
+        password: ""
+      }
     },
     computed: {},
-    methods: {},
+    methods: {
+      login() {
+
+      }
+    },
     components: {}
   }
 </script>
