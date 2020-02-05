@@ -1,6 +1,6 @@
 <template>
   <div class="logout ">
-
+    <button class="btn btn-warning"> Log out bro</button>
   </div>
 </template>
 

@@ -7,6 +7,10 @@
         <div v-if="!user.id">
           <Login />
         </div>
+        <div v-else>
+          <Logout />
+        </div>
+        <br>
         <GoogleMap />
       </div>
     </div>
@@ -28,6 +32,7 @@
   import RideForm from "@/components/RideForm.vue"
   import PassengerForm from "@/components/PassengerForm.vue"
   import Login from "@/components/Login.vue"
+  import Logout from "@/components/Logout.vue"
   export default {
     name: "home",
     props: [],
@@ -38,7 +43,7 @@
       user() { return this.$store.state.user }
     },
     methods: {},
-    components: { GoogleMap, RideForm, PassengerForm, Login }
+    components: { GoogleMap, RideForm, PassengerForm, Login, Logout }
   }
 </script>
 
