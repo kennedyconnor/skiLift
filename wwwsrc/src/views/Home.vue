@@ -4,7 +4,9 @@
       <div class="col">
         <h3>SkiLift</h3>
         <h6>Easy ridesharing to your local mountain!</h6>
-        <Login />
+        <div v-if="!user.id">
+          <Login />
+        </div>
         <GoogleMap />
       </div>
     </div>
@@ -32,7 +34,9 @@
     data() {
       return {}
     },
-    computed: {},
+    computed: {
+      user() { return this.$store.state.user }
+    },
     methods: {},
     components: { GoogleMap, RideForm, PassengerForm, Login }
   }
