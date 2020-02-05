@@ -10,8 +10,12 @@
       aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Enter Login Information</h5>
+          <div class="modal-body">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <br>
+            <br>
             <form v-if="loginForm" @submit.prevent="loginUser">
               <input type="email" v-model="creds.email" placeholder="email">
               <input type="password" v-model="creds.password" placeholder="password">
@@ -27,12 +31,6 @@
               <p v-if="loginForm">No account Click to Register</p>
               <p v-else>Already have an account click to Login</p>
             </div>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            ...
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
