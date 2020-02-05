@@ -16,7 +16,7 @@
             </button>
             <br>
             <br>
-            <form v-if="loginForm" @submit.prevent="loginUser">
+            <form v-if="loginForm" @submit.prevent="login">
               <input type="email" v-model="creds.email" placeholder="email">
               <input type="password" v-model="creds.password" placeholder="password">
               <button type="submit">Login</button>
@@ -27,14 +27,15 @@
               <input type="password" v-model="newUser.password" placeholder="password">
               <button type="submit">Create Account</button>
             </form>
+            <br>
             <div @click="loginForm = !loginForm">
-              <p v-if="loginForm">No account Click to Register</p>
-              <p v-else>Already have an account click to Login</p>
+              <p v-if="loginForm">Click to Register</p>
+              <p v-else>Click to Login</p>
             </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Submit</button>
+
           </div>
         </div>
       </div>
@@ -62,8 +63,11 @@
     },
     computed: {},
     methods: {
+      register() {
+        this.$store.dispatch("register", this.newUser);
+      },
       login() {
-
+        this.$store.dispatch("login", this.creds);
       }
     },
     components: {}
