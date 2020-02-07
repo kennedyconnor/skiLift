@@ -11,8 +11,8 @@
           <option>Brundage</option>
           <option>Sun Valley</option>
         </select>
-        <input type="text" v-model="newRide.capacity" placeholder="Passenger Capacity">
-        <input type="text" v-model="newRide.departTime" placeholder="Departure Time">
+        <input type="number" v-model="newRide.capacity" placeholder="Passenger Capacity">
+        <input type="time" v-model="newRide.departTime" placeholder="Departure Time">
       </div>
     </form>
   </div>
