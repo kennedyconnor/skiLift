@@ -11,6 +11,8 @@
           <option>Brundage</option>
           <option>Sun Valley</option>
         </select>
+        <input type="text" v-model="newRide.capacity" placeholder="Passenger Capacity">
+        <input type="text" v-model="newRide.departTime" placeholder="Departure Time">
       </div>
     </form>
   </div>
@@ -22,19 +24,18 @@
     props: [],
     data() {
       return {
-        destination: "",
-        capacity: 0
+        newRide: {
+          name: "",
+          destination: "",
+          capacity: "",
+          departTime: ""
+        }
       }
     },
     computed: {},
     methods: {
       createRide() {
-        let newRide = {
-          name: this.store.state.user.name,
-          destination: this.destination,
-          capacity: this.capacity
-        }
-        this.store.dispatch("createRide", newRide)
+        this.store.dispatch("createRide", this.newRide)
       }
     },
     components: {}
