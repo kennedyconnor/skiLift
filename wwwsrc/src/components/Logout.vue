@@ -1,6 +1,6 @@
 <template>
   <div class="logout ">
-    <button class="btn btn-warning"> Log out bro</button>
+    <button class="btn btn-warning" @click="logout()"> Log out bro</button>
   </div>
 </template>
 
@@ -12,7 +12,11 @@
       return {}
     },
     computed: {},
-    methods: {},
+    methods: {
+      logout() {
+        this.$store.dispatch("logout")
+      }
+    },
     components: {}
   }
 </script>
