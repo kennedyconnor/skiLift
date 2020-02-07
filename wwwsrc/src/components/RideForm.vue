@@ -5,7 +5,7 @@
     <form>
       <div class="form-group">
         <label>Destination (Idaho)</label>
-        <select class="form-control" id="RideFormDestinationSelect" v-model="destination">
+        <select class="form-control" id="RideFormDestinationSelect" v-model="newRide.destination">
           <option>Bogus Basin</option>
           <option>Tamarack</option>
           <option>Brundage</option>
