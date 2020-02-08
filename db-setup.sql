@@ -20,11 +20,13 @@
 --         ON DELETE CASCADE,  
 --     PRIMARY KEY (id)
 -- );
+
 -- CREATE TABLE rides (
 --     id int NOT NULL AUTO_INCREMENT,
 --     name VARCHAR(20) NOT NULL,
 --     destination VARCHAR(255) NOT NULL,
 --     maxpassengers int NOT NULL,
+--     departTime VARCHAR(255) NOT NULL,
 --     userId VARCHAR(255),
 --     INDEX userId (userId),
 --     FOREIGN KEY (userId)
