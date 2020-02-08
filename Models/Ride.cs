@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System;
 
 namespace SkiLift.Models
 {
@@ -11,6 +12,8 @@ namespace SkiLift.Models
     public string Destination { get; set; }
     [Required]
     public int MaxPassengers { get; set; }
+    [Required]
+    public DateTime DepartTime { get; set; }
     public string UserId { get; set; }
 
   }

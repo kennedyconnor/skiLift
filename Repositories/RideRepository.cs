@@ -38,8 +38,8 @@ namespace SkiLift.Repositories
     public Ride Create(Ride data)
     {
       string query = @"
-            INSERT INTO rides (name, destination, userId, maxpassengers)
-            VALUES (@Name, @Destination, @UserId, @MaxPassengers);
+            INSERT INTO rides (name, destination, userId, maxpassengers, departTime)
+            VALUES (@Name, @Destination, @UserId, @MaxPassengers, @DepartTime);
             SELECT LAST_INSERT_ID();
             ";
       int id = _db.ExecuteScalar<int>(query, data);
@@ -55,6 +55,7 @@ namespace SkiLift.Repositories
             name = @Name,
             destination = @Destination,
             maxpassengers = @MaxPassengers,
+            departTime = @DepartTime
             WHERE id = @Id ;
             SELECT * FROM rides WHERE id = @Id ;
            ";
