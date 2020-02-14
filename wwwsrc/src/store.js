@@ -20,7 +20,8 @@ export default new Vuex.Store({
     activePassenger: {},
     activeRide: {},
     rides: [],
-    passengers: []
+    passengers: [],
+    activeMap: {}
 
   },
 
@@ -40,9 +41,13 @@ export default new Vuex.Store({
     setPassengers(state, passengers) {
       state.passengers = passengers;
     },
+    setMap(state, activeMap) {
+      state.activeMap = activeMap;
+    },
     resetState(state) {
       state.user = {}
     }
+
   },
 
   actions: {
