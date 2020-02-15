@@ -2,7 +2,7 @@
   <div class="rideForm col-4 offset-2">
     <h3>Driver</h3>
     <h5>Pick up passengers</h5>
-    <form>
+    <form @submit.prevent="createRide">
       <div class="form-group">
         <label>Destination (Idaho)</label>
         <select class="form-control" id="RideFormDestinationSelect" v-model="newRide.destination">
@@ -14,6 +14,7 @@
         <input type="number" v-model="newRide.capacity" placeholder="Passenger Capacity">
         <input type="time" v-model="newRide.departTime" placeholder="Departure Time">
       </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
     </form>
   </div>
 </template>
@@ -35,7 +36,8 @@
     computed: {},
     methods: {
       createRide() {
-        this.store.dispatch("createRide", this.newRide)
+        this.newRide.name = this.$store.state.user.name
+        this.$store.dispatch("createRide", this.newRide)
       }
     },
     components: {}
