@@ -91,7 +91,7 @@ namespace SkiLift
       app.UseAuthentication();
       app.UseDefaultFiles();
       app.UseStaticFiles();
-      // app.UseHttpsRedirection();
+      // app.UseHttpsRedirection(); this currently breaks the requests of the app 
       app.UseMvc();
     }
   }
