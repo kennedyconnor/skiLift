@@ -30,7 +30,7 @@
     methods: {
       createPassenger() {
         let newPassenger = {
-          name: "Connor"//this.store.state.user.name
+          name: this.store.state.user.username
           ,
           destination: this.destination
         }

@@ -25,7 +25,7 @@
               <input type="text" v-model="newUser.username" placeholder="name">
               <input type="email" v-model="newUser.email" placeholder="email">
               <input type="password" v-model="newUser.password" placeholder="password">
-              <button type="submit">Create Account</button>
+              <button type="submit" data-dismiss="modal">Create Account</button>
             </form>
             <br>
             <div @click="loginForm = !loginForm">
