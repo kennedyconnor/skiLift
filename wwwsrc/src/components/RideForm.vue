@@ -36,7 +36,7 @@
     computed: {},
     methods: {
       createRide() {
-        this.newRide.name = this.$store.state.user.name
+        this.newRide.name = this.$store.state.user.username
         this.$store.dispatch("createRide", this.newRide)
       }
     },
