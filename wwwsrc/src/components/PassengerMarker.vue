@@ -1,12 +1,12 @@
 <template>
-  <div class=" ">
+  <div class="passengerMarker ">
 
   </div>
 </template>
 
 <script>
   export default {
-    name: "",
+    name: "passengerMarker",
     props: [],
     data() {
       return {}
