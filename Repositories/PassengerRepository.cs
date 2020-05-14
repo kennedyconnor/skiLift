@@ -38,8 +38,8 @@ namespace SkiLift.Repositories
     public Passenger Create(Passenger data)
     {
       string query = @"
-            INSERT INTO passengers (name, destination, userId)
-            VALUES (@Name, @Destination, @UserId);
+            INSERT INTO passengers (name, destination, userId, latitude, longitude)
+            VALUES (@Name, @Destination, @UserId, @Latitude,);
             SELECT LAST_INSERT_ID();
             ";
       int id = _db.ExecuteScalar<int>(query, data);
@@ -54,6 +54,8 @@ namespace SkiLift.Repositories
             SET
             name = @Name,
             destination = @Destination,
+            longitude = @Longitude,
+            latitude = @Latitude,
             WHERE id = @Id ;
             SELECT * FROM passengers WHERE id = @Id ;
            ";
@@ -66,7 +68,7 @@ namespace SkiLift.Repositories
       string query = "DELETE FROM passengers WHERE id = @Id AND userId = @UserId;";
       int changedRows = _db.Execute(query, new { id, userId });
       if (changedRows < 1) throw new Exception("Invalid Id");
-      return "Successfully Deleted Vault";
+      return "Successfully Deleted Passenger";
     }
   }
 }

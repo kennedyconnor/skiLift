@@ -11,7 +11,7 @@ namespace SkiLift.Models
     public string Destination { get; set; }
     public string UserId { get; set; }
 
-    public int[] LatLong { get; set; }
-
+    public int Latitude { get; set; }
+    public int Longitude { get; set; }
   }
 }
