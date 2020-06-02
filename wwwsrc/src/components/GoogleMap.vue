@@ -7,6 +7,7 @@
 </template>
 
 <script>
+   import MapService from './MapService'
    export default {
       name: "GoogleMap",
       props: [],
